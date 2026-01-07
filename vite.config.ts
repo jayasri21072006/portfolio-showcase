@@ -4,14 +4,24 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Use the name of your GitHub repository
-  // If your URL is https://username.github.io/portfolio/, set this to '/portfolio/'
-  base: "portfolio-showcase", 
+  // The base must have forward slashes on both sides
+  base: "/portfolio-showcase/", 
   
   plugins: [react()],
+  
   resolve: {
     alias: {
+      // This allows you to use "@/" as a shortcut for the "./src" folder
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+
+  build: {
+    // Ensures that the output directory is clean before each build
+    outDir: "dist",
+    // Helps with debugging in production if needed
+    sourcemap: false,
+    // Minimizes the output for better performance
+    minify: "esbuild",
   },
 });
