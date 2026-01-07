@@ -1,16 +1,25 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jayasri T | AI & ML Engineer</title>
+    <meta name="description" content="Portfolio of Jayasri T - AI & ML Engineer with expertise in Python, Machine Learning, Deep Learning, and Data Science." />
+    <meta name="author" content="Jayasri T" />
+    <meta name="keywords" content="AI Engineer, ML Engineer, Machine Learning, Data Science, Python, Deep Learning" />
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  // FIXED: Must have both starting and trailing slashes for GitHub Pages
-  base: "/portfolio-showcase/", 
-  
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-});
+    <meta property="og:title" content="Jayasri T | AI & ML Engineer" />
+    <meta property="og:description" content="Portfolio of Jayasri T - AI & ML Engineer with expertise in Python, Machine Learning, Deep Learning, and Data Science." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@jayasri_t" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
