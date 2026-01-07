@@ -4,13 +4,22 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // FIXED: Must have both starting and trailing slashes for GitHub Pages
+  // This is the most important line for GitHub Pages
   base: "/portfolio-showcase/", 
   
   plugins: [react()],
+  
   resolve: {
     alias: {
+      // This ensures your "@/" imports work correctly in a large repo
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+
+  build: {
+    // This ensures the output is clean and compatible with GitHub Actions
+    outDir: "dist",
+    assetsDir: "assets",
+    sourcemap: false,
   },
 });
